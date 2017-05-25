@@ -27,6 +27,16 @@
          http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
          http://cxf.apache.org/transports.camel http://cxf.apache.org/transports/camel.xsd">
 
+   <!--camelContext id="dest_context" xmlns="http://camel.apache.org/schema/spring">
+        <route>
+            <from uri="jetty:http://localhost:8080/user/atm-list"/>
+        </route>
+   </camelContext>
+ 
+   <camel:destination name="{http://apache.org/hello_world_soap_http}CamelPort.camel-destination">
+        <camel:camelContextRef>dest_context</camel:camelContextRef>
+   </camel:destination-->
+  
   <spring-security:http realm="User Restrict Realm">
     <spring-security:intercept-url pattern="/camel/**"
                                    access="hasRole('ROLE_USER')"/>
