@@ -19,11 +19,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:spring-security="http://www.springframework.org/schema/security"
+       xmlns:camel="http://cxf.apacheorg/transports/camel"
        xsi:schemaLocation="
          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
          http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
          http://camel.apache.org/schema/spring-security http://camel.apache.org/schema/spring-security/camel-spring-security.xsd
-         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+         http://cxf.apache.org/transports.camel http://cxf.apache.org/transports/camel.xsd">
 
   <spring-security:http realm="User Restrict Realm">
     <spring-security:intercept-url pattern="/camel/**"
